@@ -45,11 +45,16 @@
 </section>
 
 </body>
- <script>
+<script>
   let cart = [];
 
   function addToCart(name, price) {
     cart.push({ name, price });
+    renderCart();
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
     renderCart();
   }
 
@@ -61,9 +66,50 @@
 
     let total = 0;
 
-    cart.forEach((item) => {
+    cart.forEach((item, index) => {
       let li = document.createElement("li");
-      li.innerText = item.name + " - AED " + item.price;
+
+      li.innerHTML = `
+        ${item.name} - AED ${item.price}
+        <button onclick="removeItem(${index})">Remove</button>
+      `;
+
+      cartList.appendChild(li);
+
+      total += item.price;
+    });
+
+    totalBox.innerText = "Total: AED " + total;
+  }
+</script><script>
+  let cart = [];
+
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    renderCart();
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    renderCart();
+  }
+
+  function renderCart() {
+    let cartList = document.getElementById("cart-items");
+    let totalBox = document.getElementById("total");
+
+    cartList.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      let li = document.createElement("li");
+
+      li.innerHTML = `
+        ${item.name} - AED ${item.price}
+        <button onclick="removeItem(${index})">Remove</button>
+      `;
+
       cartList.appendChild(li);
 
       total += item.price;
