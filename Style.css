@@ -1,0 +1,35 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+header {
+    background: linear-gradient(black, #333);
+    color: white;
+    padding: 50px;
+}
+
+.product {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.product img {
+    border-radius: 10px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    background: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
