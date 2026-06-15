@@ -22,22 +22,31 @@
     <div class="product">
       <h3>iPhone 14</h3>
       <p>AED 2500</p>
-      <button>Add to Cart</button>
+      <button onclick="addToCart('iPhone 14', 2500)">Add to Cart</button>
     </div>
 
     <div class="product">
       <h3>Samsung TV</h3>
       <p>AED 1800</p>
-      <button>Add to Cart</button>
+      <button onclick="addToCart('Samsung TV', 1800)">Add to Cart</button>
     </div>
 
     <div class="product">
       <h3>Headphones</h3>
       <p>AED 200</p>
-      <button>Add to Cart</button>
+      <button onclick="addToCart('Headphones', 200)">Add to Cart</button>
     </div>
 
   </section>
 
 </body>
+  <script>
+  let cart = [];
+
+  function addToCart(productName, price) {
+    cart.push({ name: productName, price: price });
+    alert(productName + " added to cart");
+    console.log(cart);
+  }
+</script>
 </html>
