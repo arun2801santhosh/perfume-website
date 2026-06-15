@@ -1,50 +1,19 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   margin: 0;
-  padding: 0;
-  text-align: center;
   background: #f4f4f4;
 }
 
-/* HERO SECTION */
-.hero {
-  background: linear-gradient(to right, #1e3c72, #2a5298);
+/* HEADER */
+.header {
+  background: #111;
   color: white;
-  padding: 80px 20px;
+  text-align: center;
+  padding: 20px;
 }
 
-.hero h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-/* HERO BUTTON ONLY */
-.hero button {
-  padding: 12px 25px;
-  border: none;
-  background: #ff9800;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.hero button:hover {
-  background: #e68900;
-}
-
-/* ===== SERVICE CARDS (PASTE HERE AT BOTTOM) ===== */
-
-.services h2 {
-  margin-bottom: 20px;
-}
-
-.service-container {
+/* PRODUCTS GRID */
+.products {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -52,81 +21,32 @@ body {
   padding: 20px;
 }
 
-.card {
+/* PRODUCT CARD */
+.product {
   background: white;
-  width: 250px;
   padding: 20px;
+  width: 200px;
   border-radius: 10px;
+  text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
 
-.card:hover {
+.product:hover {
   transform: translateY(-5px);
 }
 
-.about, .why {
-  padding: 40px 20px;
-  background: white;
-  margin: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.about p {
-  max-width: 600px;
-  margin: auto;
-  line-height: 1.6;
-}
-
-.why ul {
-  list-style: none;
-  padding: 0;
-}
-
-.why li {
-  margin: 10px 0;
-  font-size: 18px;
-}
-.contact {
-  padding: 40px 20px;
-}
-
-.contact form {
-  max-width: 500px;
-  margin: auto;
-}
-
-.contact input,
-.contact textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-
-  border: 1px solid #ccc;
-
-  border-radius: 8px;
-
-  box-sizing: border-box;
-}
-
-.contact textarea {
-  height: 120px;
-}
-
-.contact button {
-  width: 100%;
-}
-/* FOOTER (FIXED) */
-footer {
-  background: #333;
+/* BUTTON */
+button {
+  background: #ff9800;
   color: white;
-  padding: 15px;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
-  .about, .why {
-  padding: 40px 20px;
-  background: white;
-  margin: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+button:hover {
+  background: #e68900;
 }
