@@ -64,6 +64,19 @@
 
   </form>
 </section>
+	<section class="payment">
+  <h2>Payment</h2>
+
+  <div class="payment-box">
+
+    <h3>Choose Payment Method</h3>
+
+    <button onclick="payNow('Card')">Pay with Card 💳</button>
+    <button onclick="payNow('UPI')">Pay with UPI 📱</button>
+    <button onclick="payNow('COD')">Cash on Delivery 🚚</button>
+
+  </div>
+</section>
 <script>
   let cart = [];
 
@@ -143,5 +156,16 @@
 
   this.reset();
 });
+	function payNow(method) {
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  alert("Payment method selected: " + method + "\nOrder placed successfully 🎉");
+
+  cart = [];
+  renderCart();
+}
 </script>
 </html>
