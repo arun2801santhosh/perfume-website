@@ -78,6 +78,14 @@ footer {
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
+.about, .why {
+  padding: 40px 20px;
+  background: white;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
 .about p {
   max-width: 600px;
   margin: auto;
@@ -93,8 +101,7 @@ footer {
   margin: 10px 0;
   font-size: 18px;
 }
-  margin-top: 20px;
-}footer {
+  footer {
   background: #333;
   color: white;
   padding: 10px;
