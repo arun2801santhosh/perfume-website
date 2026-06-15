@@ -49,7 +49,29 @@
   let cart = [];
 
   function addToCart(name, price) {
-    cart.push({ name, price });
+    let existing = cart.find(item => item.name === name);
+
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ name, price, qty: 1 });
+    }
+
+    renderCart();
+  }
+
+  function increaseQty(index) {
+    cart[index].qty += 1;
+    renderCart();
+  }
+
+  function decreaseQty(index) {
+    cart[index].qty -= 1;
+
+    if (cart[index].qty === 0) {
+      cart.splice(index, 1);
+    }
+
     renderCart();
   }
 
@@ -67,52 +89,22 @@
     let total = 0;
 
     cart.forEach((item, index) => {
+      let itemTotal = item.price * item.qty;
+      total += itemTotal;
+
       let li = document.createElement("li");
 
       li.innerHTML = `
         ${item.name} - AED ${item.price}
+        | Qty: ${item.qty}
+        | Subtotal: AED ${itemTotal}
+        
+        <button onclick="increaseQty(${index})">+</button>
+        <button onclick="decreaseQty(${index})">-</button>
         <button onclick="removeItem(${index})">Remove</button>
       `;
 
       cartList.appendChild(li);
-
-      total += item.price;
-    });
-
-    totalBox.innerText = "Total: AED " + total;
-  }
-</script><script>
-  let cart = [];
-
-  function addToCart(name, price) {
-    cart.push({ name, price });
-    renderCart();
-  }
-
-  function removeItem(index) {
-    cart.splice(index, 1);
-    renderCart();
-  }
-
-  function renderCart() {
-    let cartList = document.getElementById("cart-items");
-    let totalBox = document.getElementById("total");
-
-    cartList.innerHTML = "";
-
-    let total = 0;
-
-    cart.forEach((item, index) => {
-      let li = document.createElement("li");
-
-      li.innerHTML = `
-        ${item.name} - AED ${item.price}
-        <button onclick="removeItem(${index})">Remove</button>
-      `;
-
-      cartList.appendChild(li);
-
-      total += item.price;
     });
 
     totalBox.innerText = "Total: AED " + total;
