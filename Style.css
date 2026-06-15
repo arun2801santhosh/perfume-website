@@ -68,15 +68,18 @@ button:hover {
   border-bottom: 1px solid #eee;
 }
 .cart button {
-  background: red;
-  color: white;
-  border: none;
+  margin: 5px;
   padding: 5px 10px;
-  margin-left: 10px;
-  cursor: pointer;
   border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.cart button:nth-child(odd) {
+  background: #25a7ff;
+  color: white;
 }
 
 .cart button:hover {
-  background: darkred;
+  opacity: 0.8;
 }
