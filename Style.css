@@ -88,7 +88,35 @@ body {
   margin: 10px 0;
   font-size: 18px;
 }
+.contact {
+  padding: 40px 20px;
+}
 
+.contact form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 8px;
+
+  box-sizing: border-box;
+}
+
+.contact textarea {
+  height: 120px;
+}
+
+.contact button {
+  width: 100%;
+}
 /* FOOTER (FIXED) */
 footer {
   background: #333;
