@@ -50,3 +50,20 @@ button {
 button:hover {
   background: #e68900;
 }
+.cart {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart li {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
