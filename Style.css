@@ -67,3 +67,16 @@ button:hover {
   padding: 8px;
   border-bottom: 1px solid #eee;
 }
+.cart button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cart button:hover {
+  background: darkred;
+}
