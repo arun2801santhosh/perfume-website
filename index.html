@@ -128,5 +128,20 @@
 
     totalBox.innerText = "Total: AED " + total;
   }
+	document.getElementById("checkout-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  alert("Order placed successfully 🎉 We will contact you soon!");
+
+  cart = [];
+  renderCart();
+
+  this.reset();
+});
 </script>
 </html>
