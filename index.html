@@ -46,18 +46,24 @@
 	<section class="checkout">
   <h2>Checkout</h2>
 
-  <form>
+  <form id="checkout-form">
+
     <input type="text" placeholder="Full Name" required>
     <input type="text" placeholder="Address" required>
     <input type="text" placeholder="City" required>
     <input type="text" placeholder="Phone Number" required>
 
-    <select>
-      <option>Payment Method</option>
+    <select required>
+      <option value="">Select Payment Method</option>
       <option>Cash on Delivery</option>
-      <option>
+      <option>Card Payment</option>
+      <option>UPI / Online Transfer</option>
+    </select>
 
-</body>
+    <button type="submit">Place Order</button>
+
+  </form>
+</section>
 <script>
   let cart = [];
 
