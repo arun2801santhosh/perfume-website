@@ -159,3 +159,15 @@ body {
 .payment button:hover {
   background: #0b7dda;
 }
+#cart-items {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
