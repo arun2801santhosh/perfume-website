@@ -6,18 +6,34 @@ buttons.forEach(button => {
   button.addEventListener("click", function () {
     
     let name = this.getAttribute("data-name");
-    let price = this.getAttribute("data-price");
+    let price = Number(this.getAttribute("data-price"));
 
-    let product = {
-      name: name,
-      price: price
-    };
+    let product = { name, price };
 
     cart.push(product);
 
-    console.log("Added to cart:", product);
-    console.log("Current Cart:", cart);
-
-    alert(name + " added to cart!");
+    updateCart();
   });
 });
+
+function updateCart() {
+  let cartContainer = document.getElementById("cart-items");
+  let totalContainer = document.getElementById("cart-total");
+
+  cartContainer.innerHTML = "";
+
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price;
+
+    cartContainer.innerHTML += `
+      <div class="cart-item">
+        <span>${item.name}</span>
+        <span>$${item.price}</span>
+      </div>
+    `;
+  });
+
+  totalContainer.innerText = "Total: $" + total;
+}
