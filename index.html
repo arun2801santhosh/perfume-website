@@ -1,187 +1,427 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Shop</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Online Store</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <h1>My Online Store</h1>
-    <p>Best deals in UAE 🇦🇪</p>
-  </header>
+<!-- HEADER -->
+<header class="header">
 
-  <!-- PRODUCTS -->
-  <section class="products">
-	  <div class="product">
-  <img src="images/amber.jpg" alt="Perfume">
-  <h3>Luxury Perfume</h3>
-  <p>$50</p>
+<h1>My Online Store</h1>
 
-  <button class="add-to-cart" data-name="Luxury Perfume" data-price="50">
-    Add to Cart
-  </button>
-	  </div>
+<p>Best deals in UAE 🇦🇪</p>
 
-    <div class="product">
-      <h3>iPhone 14</h3>
-      <p>AED 2500</p>
-      <button onclick="addToCart('iPhone 14', 2500)">Add to Cart</button>
-    </div>
+</header>
 
-    <div class="product">
-      <h3>Samsung TV</h3>
-      <p>AED 1800</p>
-      <button onclick="addToCart('Samsung TV', 1800)">Add to Cart</button>
-    </div>
 
-    <div class="product">
-      <h3>Headphones</h3>
-      <p>AED 200</p>
-      <button onclick="addToCart('Headphones', 200)">Add to Cart</button>
-    </div>
+<!-- PRODUCTS -->
+<section class="products">
 
-  </section>
-	<section class="cart">
-  <h2>Your Cart</h2>
-  <ul id="cart-items"></ul>
-  <h3 id="total">Total: AED 0</h3>
+<div class="product">
+
+<img src="images/amber.jpg" alt="Luxury Perfume">
+
+<h3>Luxury Perfume</h3>
+
+<p>AED 50</p>
+
+<button onclick="addToCart('Luxury Perfume',50)">
+Add to Cart
+</button>
+
+</div>
+
+
+<div class="product">
+
+<h3>iPhone 14</h3>
+
+<p>AED 2500</p>
+
+<button onclick="addToCart('iPhone 14',2500)">
+Add to Cart
+</button>
+
+</div>
+
+
+<div class="product">
+
+<h3>Samsung TV</h3>
+
+<p>AED 1800</p>
+
+<button onclick="addToCart('Samsung TV',1800)">
+Add to Cart
+</button>
+
+</div>
+
+
+<div class="product">
+
+<h3>Headphones</h3>
+
+<p>AED 200</p>
+
+<button onclick="addToCart('Headphones',200)">
+Add to Cart
+</button>
+
+</div>
+
 </section>
-	<h2>Your Cart 🛒</h2>
 
-<div id="cart-items"></div>
 
-<h3 id="cart-total">Total: $0</h3>
-	<section class="checkout">
-  <h2>Checkout</h2>
 
-  <form id="checkout-form">
+<!-- CART -->
+<section class="cart">
 
-    <input type="text" placeholder="Full Name" required>
-    <input type="text" placeholder="Address" required>
-    <input type="text" placeholder="City" required>
-    <input type="text" placeholder="Phone Number" required>
+<h2>Your Cart 🛒</h2>
 
-    <select required>
-      <option value="">Select Payment Method</option>
-      <option>Cash on Delivery</option>
-      <option>Card Payment</option>
-      <option>UPI / Online Transfer</option>
-    </select>
+<ul id="cart-items"></ul>
 
-    <button type="submit">Place Order</button>
+<h3 id="total">
+Total: AED 0
+</h3>
 
-  </form>
 </section>
-	<section class="payment">
-  <h2>Payment</h2>
 
-  <div class="payment-box">
 
-    <h3>Choose Payment Method</h3>
 
-    <button onclick="payNow('Card')">Pay with Card 💳</button>
-    <button onclick="payNow('UPI')">Pay with UPI 📱</button>
-    <button onclick="payNow('COD')">Cash on Delivery 🚚</button>
+<!-- CHECKOUT -->
+<section class="checkout">
 
-  </div>
+<h2>Checkout</h2>
+
+<form id="checkout-form">
+
+<input
+type="text"
+placeholder="Full Name"
+required
+>
+
+<input
+type="text"
+placeholder="Address"
+required
+>
+
+<input
+type="text"
+placeholder="City"
+required
+>
+
+<input
+type="tel"
+placeholder="Phone Number"
+required
+>
+
+<select required>
+
+<option value="">
+Select Payment Method
+</option>
+
+<option>
+Cash on Delivery
+</option>
+
+<option>
+Card Payment
+</option>
+
+<option>
+UPI / Online Transfer
+</option>
+
+</select>
+
+<button type="submit">
+
+Place Order
+
+</button>
+
+</form>
+
 </section>
-</body>
-<script src="script.js"></script>
+
+
+
+<!-- PAYMENT -->
+<section class="payment">
+
+<h2>Payment</h2>
+
+<div class="payment-box">
+
+<h3>
+Choose Payment Method
+</h3>
+
+<button onclick="payNow('Card')">
+
+Pay with Card 💳
+
+</button>
+
+
+<button onclick="payNow('UPI')">
+
+Pay with UPI 📱
+
+</button>
+
+
+<button onclick="payNow('COD')">
+
+Cash on Delivery 🚚
+
+</button>
+
+</div>
+
+</section>
+
+
+
 <script>
-  let cart = [];
 
-  function addToCart(name, price) {
-    let existing = cart.find(item => item.name === name);
+let cart = [];
 
-    if (existing) {
-      existing.qty += 1;
-    } else {
-      cart.push({ name, price, qty: 1 });
-    }
+function addToCart(name, price) {
 
-    renderCart();
-  }
+let existing =
+cart.find(
+item => item.name === name
+);
 
-  function increaseQty(index) {
-    cart[index].qty += 1;
-    renderCart();
-  }
+if (existing) {
 
-  function decreaseQty(index) {
-    cart[index].qty -= 1;
+existing.qty++;
 
-    if (cart[index].qty === 0) {
-      cart.splice(index, 1);
-    }
-
-    renderCart();
-  }
-
-  function removeItem(index) {
-    cart.splice(index, 1);
-    renderCart();
-  }
-
-  function renderCart() {
-    let cartList = document.getElementById("cart-items");
-    let totalBox = document.getElementById("total");
-
-    cartList.innerHTML = "";
-
-    let total = 0;
-
-    cart.forEach((item, index) => {
-      let itemTotal = item.price * item.qty;
-      total += itemTotal;
-
-      let li = document.createElement("li");
-
-      li.innerHTML = `
-        ${item.name} - AED ${item.price}
-        | Qty: ${item.qty}
-        | Subtotal: AED ${itemTotal}
-        
-        <button onclick="increaseQty(${index})">+</button>
-        <button onclick="decreaseQty(${index})">-</button>
-        <button onclick="removeItem(${index})">Remove</button>
-      `;
-
-      cartList.appendChild(li);
-    });
-
-    totalBox.innerText = "Total: AED " + total;
-  }
-	document.getElementById("checkout-form").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  if (cart.length === 0) {
-    alert("Your cart is empty!");
-    return;
-  }
-
-  alert("Order placed successfully 🎉 We will contact you soon!");
-
-  cart = [];
-  renderCart();
-
-  this.reset();
-});
-	function payNow(method) {
-  if (cart.length === 0) {
-    alert("Your cart is empty!");
-    return;
-  }
-
-  alert("Payment method selected: " + method + "\nOrder placed successfully 🎉");
-
-  cart = [];
-  renderCart();
 }
+
+else {
+
+cart.push({
+
+name,
+price,
+qty: 1
+
+});
+
+}
+
+renderCart();
+
+}
+
+
+
+function increaseQty(index){
+
+cart[index].qty++;
+
+renderCart();
+
+}
+
+
+
+function decreaseQty(index){
+
+cart[index].qty--;
+
+if(
+cart[index].qty <= 0
+){
+
+cart.splice(index,1);
+
+}
+
+renderCart();
+
+}
+
+
+
+function removeItem(index){
+
+cart.splice(index,1);
+
+renderCart();
+
+}
+
+
+
+function renderCart(){
+
+let cartList =
+document.getElementById(
+"cart-items"
+);
+
+let totalBox =
+document.getElementById(
+"total"
+);
+
+cartList.innerHTML="";
+
+let total=0;
+
+cart.forEach(
+(item,index)=>{
+
+let subtotal =
+item.price *
+item.qty;
+
+total += subtotal;
+
+let li =
+document.createElement(
+"li"
+);
+
+li.innerHTML = `
+
+${item.name}
+
+|
+
+AED ${item.price}
+
+|
+
+Qty:
+${item.qty}
+
+|
+
+Subtotal:
+AED ${subtotal}
+
+<button onclick="increaseQty(${index})">
++
+</button>
+
+<button onclick="decreaseQty(${index})">
+-
+</button>
+
+<button onclick="removeItem(${index})">
+Remove
+</button>
+
+`;
+
+cartList.appendChild(li);
+
+}
+);
+
+totalBox.innerText =
+"Total: AED " +
+total;
+
+}
+
+
+
+document
+.getElementById(
+"checkout-form"
+)
+
+.addEventListener(
+"submit",
+
+function(e){
+
+e.preventDefault();
+
+if(
+cart.length===0
+){
+
+alert(
+"Your cart is empty!"
+);
+
+return;
+
+}
+
+alert(
+"Order placed successfully 🎉"
+);
+
+cart=[];
+
+renderCart();
+
+this.reset();
+
+}
+
+);
+
+
+
+function payNow(method){
+
+if(
+cart.length===0
+){
+
+alert(
+"Your cart is empty!"
+);
+
+return;
+
+}
+
+alert(
+
+"Payment: "
++
+
+method
+
++
+
+"\nOrder placed successfully 🎉"
+
+);
+
+cart=[];
+
+renderCart();
+
+}
+
 </script>
+
+</body>
+
 </html>
