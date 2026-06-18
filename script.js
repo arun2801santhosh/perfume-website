@@ -37,3 +37,25 @@ function updateCart() {
 
   totalContainer.innerText = "Total: $" + total;
 }
+function startPayment(){
+
+if(cart.length===0){
+
+alert("Your cart is empty!");
+
+return;
+
+}
+
+/*
+Future:
+Send cart data to backend
+Backend creates payment session
+Redirect customer to payment page
+*/
+
+alert(
+"Online payment setup ready.\nNext step: connect payment gateway."
+);
+
+}
